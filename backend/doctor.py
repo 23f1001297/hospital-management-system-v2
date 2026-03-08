@@ -3,6 +3,7 @@ from database import Users, Appointments, db, Treatments
 
 
 
+
 doctor_bp = Blueprint('doctor', __name__)
 
 @doctor_bp.route('/doctor/appointments/<int:doctor_id>')

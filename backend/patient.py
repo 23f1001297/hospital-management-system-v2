@@ -14,7 +14,8 @@ def docs():
     for user, doc in doctor:
         data.append({"id": user.id, "name": user.name, "special": doc.special, "availability": doc.availability})
     return jsonify(data)
-    
+
+
 
 @patient_bp.route('/patient/book', methods=['POST'])
 def book():
