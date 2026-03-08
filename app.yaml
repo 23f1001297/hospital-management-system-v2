@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: Hospital Management System API
+  version: 1.0.0
+  description: API for managing hospital appointments, doctors, and patients.
+
+paths:
+
+  /:
+    get:
+      summary: Check if API is running
+      responses:
+        '200':
+          description: API running successfully
+
+  /login:
+    post:
+      summary: User login
+      responses:
+        '200':
+          description: Login successful
+        '401':
+          description: Invalid credentials
+
+  /register:
+    post:
+      summary: Register a new patient
+      responses:
+        '201':
+          description: Registration successful
+
+  /docs:
+    get:
+      summary: Get list of doctors
+      responses:
+        '200':
+          description: List of doctors
+
+  /patient/docs:
+    get:
+      summary: View doctors available for patients
+      responses:
+        '200':
+          description: Doctor list
+
+  /patient/book:
+    post:
+      summary: Book an appointment
+      responses:
+        '200':
+          description: Appointment booked
+
+  /patient/appo/{patient_id}:
+    get:
+      summary: View patient appointments
+      parameters:
+        - name: patient_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Appointment list
+
+  /doctor/appointments/{doctor_id}:
+    get:
+      summary: View doctor's appointments
+      parameters:
+        - name: doctor_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Doctor appointment list
+
+  /doctor/complete/{appt_id}:
+    post:
+      summary: Mark appointment as completed
+      parameters:
+        - name: appt_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Appointment completed
+
+  /doctor/cancel/{appt_id}:
+    put:
+      summary: Cancel an appointment
+      parameters:
+        - name: appt_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Appointment cancelled
+
+  /daily:
+    get:
+      summary: Get daily appointment summary
+      responses:
+        '200':
+          description: Daily appointments
+
+  /monthly:
+    get:
+      summary: Get monthly doctor report
+      responses:
+        '200':
+          description: Monthly report
+
+  /a_stats:
+    get:
+      summary: Get appointment statistics
+      responses:
+        '200':
+          description: System statistics
