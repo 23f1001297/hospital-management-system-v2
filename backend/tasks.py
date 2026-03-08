@@ -9,6 +9,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 
+
 def send_mail(to_email, subject, content):
     message = EmailMessage()
     message['Subject'] = subject

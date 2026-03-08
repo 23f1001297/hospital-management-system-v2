@@ -2,6 +2,7 @@ from celery import Celery
 from app import create_app
 from celery.schedules import crontab
 
+
 def make_celery():
     app = create_app()
     celery = Celery(
