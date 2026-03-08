@@ -19,6 +19,7 @@ It allows users to book appointments, track activities, and manage health-relate
 
 
 
+
 1. Clone the repository or extract the ZIP file.
 
 2. Create virtual environment
