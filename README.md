@@ -8,6 +8,7 @@ Hospital Management System V - 2
 This project is a web-based hospital management system built using Flask. 
 It allows users to book appointments, track activities, and manage health-related information.
 
+
 - Python
 - Flask
 - SQLite
