@@ -3,6 +3,7 @@ from database import db, Users, Appointments, Treatments, Doctor
 
 patient_bp = Blueprint('patient_bp', __name__)
 
+
 @patient_bp.route('/patient/docs', methods=['GET'])
 def docs():
     doctor = db.session.query(Users, Doctor)\
